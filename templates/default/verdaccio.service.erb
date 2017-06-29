@@ -6,8 +6,8 @@ Description=Verdaccio NPM cache & private repo server
 [Service]
 ExecStart=/usr/bin/verdaccio -c <%= File.join(node['verdaccio']['confdir'], 'config.yaml') %>
 Type=simple
-User=verdaccio
-Group=verdaccio
+User=<%= node['verdaccio']['user'] %>
+Group=<%= node['verdaccio']['group'] %>
 
 [Install]
 WantedBy=multi-user.target

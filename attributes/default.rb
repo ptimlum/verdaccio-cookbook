@@ -1,7 +1,8 @@
 # encoding: utf-8
 
 ## System user running verdaccio
-default['verdaccio']['user'] = 'verdaccio'
+default['verdaccio']['user'] =  'verdaccio'
+default['verdaccio']['group'] = node['verdaccio']['user']
 
 ## verdaccio gem version (use nil for latest)
 default['verdaccio']['version'] = nil
@@ -40,6 +41,9 @@ default['verdaccio']['repos'] = {
   'npmjs' => 'https://registry.npmjs.org/' # official npmjs repo
   # 'myrepo' => 'https://myrepo.local/'
 }
+
+default['verdaccio']['npm_options'] = [
+]
 
 default['verdaccio']['mainrepo'] = 'npmjs'
 

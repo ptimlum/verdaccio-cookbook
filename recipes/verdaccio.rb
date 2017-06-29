@@ -7,6 +7,7 @@ require 'digest'
 
 nodejs_npm 'verdaccio' do
   version node['verdaccio']['version']
+  options node['verdaccio']['npm_options'] unless options node['verdaccio']['npm_options'].empty?
 end
 
 directory node['verdaccio']['confdir'] do
@@ -19,7 +20,7 @@ end
 ].each do |create_dir|
   directory create_dir do
     owner node['verdaccio']['user']
-    group node['verdaccio']['user']
+    group node['verdaccio']['group']
   end
 end
 
