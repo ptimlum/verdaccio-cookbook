@@ -7,7 +7,7 @@ require 'digest'
 
 nodejs_npm 'verdaccio' do
   version node['verdaccio']['version']
-  options node['verdaccio']['npm_options'] unless options node['verdaccio']['npm_options'].empty?
+  options node['verdaccio']['npm_options'] unless node['verdaccio']['npm_options'].empty?
 end
 
 directory node['verdaccio']['confdir'] do
